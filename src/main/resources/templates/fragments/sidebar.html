@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sidebar</title>
+ <script src="https://kit.fontawesome.com/f41fd42c11.js" crossorigin="anonymous"></script>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed"></body>
+<div class="wrapper">
+
+ 
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-2" th:fragment="sidebar">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="text-center mt-3 mb-2">
+        <div class="image">
+          <img th:src="@{/image/AdminLTELogo.png}" alt="User Image" height="150" width="100">
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+    
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a th:href="@{/home}" class="nav-link active">
+              <i class="fa-solid fa-gauge fa-1x"></i>
+              <!-- <i class="far fa-circle nav-icon"></i> -->
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a th:href="@{/class}" class="nav-link">
+              <i class="fa-solid fa-landmark fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-th"></i> -->
+              <p>
+                Class Management
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-chart-pie fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-tree"></i> -->
+              <p>
+                Subject Management
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-users fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-copy"></i> -->
+              <p>
+                Student Management
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-chalkboard-user fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-chart-pie"></i> -->
+              <p>
+                Teacher Management
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-file fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-edit"></i> -->
+              <p>
+                Exams Management
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-sharp fa-solid fa-marker fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-edit"></i> -->
+              <p>
+                Result Management
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-cloud-arrow-down fa-1x"></i>
+              <!-- <i class="nav-icon fas fa-table"></i> -->
+              <p>
+                Downloads
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  </div>
+
+</body>
+</html>
