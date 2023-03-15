@@ -16,7 +16,7 @@ $(document).ready(function () {
           .then((result) => {
             if (result.value) {
               $.ajax({
-                url: "delete_data.php",
+                url: "deleteexams.php",
                 type: "POST",
                 data: { id: id },
                 dataType: "json",
@@ -27,7 +27,7 @@ $(document).ready(function () {
                     "Your file has been deleted.",
                     "success"
                   );
-                  // swal.fire('Deleted!', response.message, response.status, "success");
+                  // location.reload(true);
                 })
                 .fail(function () {
                   swal.fire(
@@ -35,7 +35,9 @@ $(document).ready(function () {
                     "Something went wrong !!!!",
                     "error"
                   );
+                  // location.reload(true);
                 });
+                // location.reload(true);
             }
           });
       });

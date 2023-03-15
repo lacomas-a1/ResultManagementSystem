@@ -4,7 +4,7 @@
       layout:decorate="~{layout/page_header}">
 <head>
 <meta charset="ISO-8859-1">
-<title>Teacher</title>
+<title>User</title>
 </head>
 <body>
 <!-- Content Wrapper. Contains page content -->
@@ -14,12 +14,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Teacher Management</h1>
+            <h1 class="m-0">User Management</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Teacher</li>
+              <li class="breadcrumb-item active">User</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -72,6 +72,10 @@
                                             <label>Email</label>
                                             <input type="email" class="form-control" id="email" name="email" placeholder="Class Name" required>
                                         </div>
+                                        <div class="form-group">
+                                            <label>Role</label>
+                                            <input type="text" class="form-control" id="role" name="role" placeholder="Parent Contact" required>
+                                        </div>
                                         
                                     </div>
                                     <div class="col-md-6">
@@ -95,6 +99,15 @@
                                             <label>Address </label>
                                             <input type="address" class="form-control" id="address" name="address" placeholder="Address" required>
                                         </div>
+                                        <div class="form-group">
+										 <label>Password </label>
+										   <input type="password" class="form-control" id="pass" name="pass" onkeyup='check();' placeholder="Password" required>
+										</div>
+										<div class="form-group">                                         
+										 <label>Confirm Password </label>
+										<input type="password" class="form-control" id="confirmpass" name="confirmpass" onkeyup='check();' placeholder="Password" required>
+										<span id="message"></span>
+										</div>
                                     </div>
                                 </div>
                                     <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
@@ -151,7 +164,7 @@
         <!-- </div> -->
     </div>
     <!-- <script src="alert.js"></script> -->
-    <script th:src="@{/js/swal/studentdelete.js}"></script>
+    <script th:src="@{/js/swal/userdelete.js}"></script>
     <script>
     jQuery(document).ready(function($) {
         // $('#tblUser').DataTable();
@@ -191,6 +204,18 @@
 
     } );
     </script>
+    <script>
+	  var check = function() {
+	  if (document.getElementById('pass').value ==
+	    document.getElementById('confirmpass').value) {
+	    document.getElementById('message').style.color = 'green';
+	    document.getElementById('message').innerHTML = 'Matching';
+	  } else {
+	    document.getElementById('message').style.color = 'red';
+	    document.getElementById('message').innerHTML = 'NOT Matching';
+	  }
+	}
+	</script>
       
       <div>
      </section>

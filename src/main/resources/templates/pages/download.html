@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/page_header}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Downloads</title>
+</head>
+<body>
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" layout:fragment="content">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Downloads</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Download</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+      <!-- <div class="container mt-5"> -->
+        <!-- <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow"> -->
+
+                    <div class="card-header">
+                        <!-- <h1>Settings</h1> -->
+                        <div class="row mb-2">
+                            <div class="col-md-3">
+      
+                            </div>
+                            <div class="col-md-9">
+                                <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
+                                    <!-- <i class="fa fa-plus" aria-hidden="true"> Individual Result</i> -->
+                                    <!--  <i class="fa-solid fa-cloud-arrow-down" aria-hidden="false"> Individual Result</i>-->Individual Results
+                                </button>
+                                <button type="button" id="insert-btn2" class="btn btn-primary" style="float: right; margin-right: 5px;">
+                                    Class Results
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card mb-3" id="form-body">
+                            <div class="card-header">
+                                Individual Result
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Admission Number </label>
+                                        <input type="text" class="form-control" id="admno" placeholder="Admission Number" required>
+                                    </div>
+                                    <div class="form-group mt-2">
+                                        <label>Class Name</label>
+                                        <input type="text" class="form-control" id="class" placeholder="Class Name" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-2" id="submit">Download</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3" id="form-body2">
+                            <div class="card-header">
+                                Class Result
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Class Name</label>
+                                        <input type="text" class="form-control" id="class" placeholder="Class Name" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-2" id="submit">Download</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <!-- </div>
+            </div>
+        </div> -->
+    <!-- </div> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        $("#form-body").hide();
+
+        $("#insert-btn").on('click',function(){
+            $("#form-body2").hide();
+            $("#form-body").toggle(500);
+        });
+
+        $("#submit").on('click',function(e){
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            $.ajax({
+                url : "insertstudent.php",
+                type : "POST",
+                data : {name:name,email:email},
+                success : function(data){
+                    alert("Data Inserted Successfully");
+                    $("#form-body").hide();
+                    location.reload(true);
+                }
+            });
+
+        });
+
+    } );
+    </script>
+    <script>
+    jQuery(document).ready(function($) {
+        $("#form-body2").hide();
+
+        $("#insert-btn2").on('click',function(){
+            $("#form-body").hide();
+            $("#form-body2").toggle(500);
+        });
+
+        $("#submit").on('click',function(e){
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            $.ajax({
+                url : "insertstudent.php",
+                type : "POST",
+                data : {name:name,email:email},
+                success : function(data){
+                    alert("Data Inserted Successfully");
+                    $("#form-body2").hide();
+                    location.reload(true);
+                }
+            });
+
+        });
+
+    } );
+    </script>
+      </div>
+    </section>
+
+</body>
+</html>

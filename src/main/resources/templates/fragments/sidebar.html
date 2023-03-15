@@ -17,8 +17,8 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="text-center mt-3 mb-2">
-        <div class="image">
-          <img th:src="@{/image/AdminLTELogo.png}" alt="User Image" height="150" width="100">
+        <div class="image" style="height:10vh;">
+         <!--  <img th:src="" alt="" height="150" width="100">-->
         </div>
       </div>
 
@@ -51,7 +51,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a th:href="@{/subject}" class="nav-link">
               <i class="fa-solid fa-chart-pie fa-1x"></i>
               <!-- <i class="nav-icon fas fa-tree"></i> -->
               <p>
@@ -61,7 +61,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a th:href="@{/student}" class="nav-link">
               <i class="fa-solid fa-users fa-1x"></i>
               <!-- <i class="nav-icon fas fa-copy"></i> -->
               <p>
@@ -71,7 +71,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a th:href="@{/teacher}" class="nav-link">
               <i class="fa-solid fa-chalkboard-user fa-1x"></i>
               <!-- <i class="nav-icon fas fa-chart-pie"></i> -->
               <p>
@@ -81,7 +81,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a th:href="@{/exams}" class="nav-link">
               <i class="fa-solid fa-file fa-1x"></i>
               <!-- <i class="nav-icon fas fa-edit"></i> -->
               <p>
@@ -91,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a th:href="@{/results}" class="nav-link">
               <i class="fa-sharp fa-solid fa-marker fa-1x"></i>
               <!-- <i class="nav-icon fas fa-edit"></i> -->
               <p>
@@ -101,7 +101,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a th:href="@{/download}" class="nav-link">
               <i class="fa-solid fa-cloud-arrow-down fa-1x"></i>
               <!-- <i class="nav-icon fas fa-table"></i> -->
               <p>

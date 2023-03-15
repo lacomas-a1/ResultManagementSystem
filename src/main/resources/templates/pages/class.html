@@ -30,60 +30,98 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <div class="container-fluid" style="margin-top:30px !important;">
-        <div class="container">
-            <div class="row mb-2">
-                <div class="col-md-9">
-                </div>
-                <div class="col-md-3">
-                    <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card mb-3" id="form-body">
-                <div class="card-header">
-                    Insert Data
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label>Name </label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+      <!-- <div class="row justify-content-center"> -->
+            <!-- <div class="col-md-6"> -->
+                <!-- <div class="card shadow"> -->
+                    <div class="card-header">
+                    <div class="row mb-2">
+                        <div class="col-md-9">
+                            <!-- <h1>Class Management</h1> -->
                         </div>
-                        <div class="form-group mt-2">
-                            <label>Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                        <div class="col-md-3">
+                            <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
+                                <i class="fa fa-plus"></i>
+                            </button>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
+                    </div>
+                    <div class="card mb-3" id="form-body">
+                        <div class="card-header">
+                            Add Class
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group mt-2">
+                                    <label>Class Name</label>
+                                    <input type="text" class="form-control" id="class_name" name="class_name" placeholder="Class Name" required>
+                                </div>
+                                <!-- <div class="form-group mt-2">
+                                    <label>Class Teacher</label>
+                                    <select type="text" name="class_teacher" id="class_teacher" class="form-control"   placeholder="Class" required="">
+                                        <option value="">--Select Teacher--</option>
+                                        <?php                                 
+                                        include('connect.php');
 
-            <table id="tblUser">
-                <thead>
-                    <th>Id</th>
-                    <th>Fullname</th>
-                    <th>Email</th>
-                    <th>Action</th>
-                </thead>
-                <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href="#" data-id="" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-        </div>
+                                        $query = "SELECT * FROM teacher"; 
+                                        $query_run = mysqli_query($conn, $query);
+
+                                        if(mysqli_num_rows($query_run) > 0) 
+                                                                                {
+                                            foreach($query_run as $row)
+                                            {
+                                                ?>
+                                                <option value="<?php echo $row["fname"];?>">
+                                                        <?php echo $row['fname'];?>
+                                                </option>  
+                                                <?php
+                                            }
+                                        }
+                                        ?>                                                                  
+                                    </select>
+                                </div> -->
+                                <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                        
+                       
+                </div>
+
+                
+
+
+                    <div class="card-body">
+                        <!-- <div class="table-striped"> -->
+                        <table id="tblUser" class="table table-striped" style="width:100%">
+                        <!-- <table id="myTable2" class="display" style="width:100%"> -->
+                        <!-- <table id="tblUser" class="display"> -->
+                            <thead>
+                                <tr>
+                                    <th>class_name</th>
+                                    <!-- <th>class_teacher</th>  -->
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <!-- <td><?= $row['class_teacher'] ?></td>  -->
+                                     <td>
+						            <a href="" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+						            <a href="#" data-id="" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+						         </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- </div> -->
+
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
     </div>
-   <script th:src="@{/js/swal/swaldelete.js}"></script>
-   <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
-   <script>
+    <!-- <script src="alert.js"></script> -->
+    <script th:src="@{/js/swal/classdelete.js}"></script>
+    <script>
     jQuery(document).ready(function($) {
         $('#tblUser').DataTable();
         $("#form-body").hide();
@@ -95,23 +133,14 @@
         $("#submit").on('click',function(e){
             e.preventDefault();
 
-            var name = $('#name').val();
-            var email = $('#email').val();
+            var class_name = $('#class_name').val();
+            var class_teacher = $('#class_teacher').val();
 
             $.ajax({
-                url : "insert_data.php",
+                url : "insertclass.php",
                 type : "POST",
-                data : {name:name,email:email},
+                data : {class_name:class_name,class_teacher:class_teacher},
                 success : function(data){
-                    // console.log(data);
-                    // swal({
-                    //     position : "top-end",
-                    //     type : "success",
-                    //     title : "Data Inserted Successfully",
-                    //     showConfirmButton : false,
-                    //     timer : 3000
-                    // });
-                    // swal("Good job!", "Login Success!", "success");
                     alert("Data Inserted Successfully");
                     $("#form-body").hide();
                     location.reload(true);
