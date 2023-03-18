@@ -34,37 +34,15 @@
             <!-- <div class="col-md-6"> -->
                 <!-- <div class="card shadow"> -->
                     <div class="card-header">
-                    <div class="row mb-2">
+                   <div class="row mb-2">
                         <div class="col-md-9">
+                            <!-- <h1>Class Management</h1> -->
                         </div>
                         <div class="col-md-3">
-                            <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
+                           <a th:href="@{/showSubjectForm}" class="btn btn-primary mb-3" style="float: right;"> Add Subject</a>
                         </div>
                     </div>
-                    <div class="card mb-3" id="form-body">
-                        <div class="card-header">
-                            Add Subject
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <label>Class Name</label>
-                                    <input type="text" class="form-control" id="cname" name="cname" placeholder="Subject Name" required>
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label>Subject Name </label>
-                                    <input type="text" class="form-control" id="sname" name="sname" placeholder="Subject Name" required>
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label>Subject Code </label>
-                                    <input type="text" class="form-control" id="scode" name="scode" placeholder="Subject Code" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
-                            </form>
-                        </div>
-                    </div>
+                   
                         
                        
                     </div>
@@ -84,15 +62,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-		                                <a href="" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-		                                <a href="#" data-id="" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-		                            </td>
-                                </tr>               
+                                <tr th:each="subject : ${listSubject}">
+                                  <td th:text="${subject.cname}"></td>
+                                  <td th:text="${subject.sname}"></td>
+                                  <td th:text="${subject.scode}"></td>
+                                  <td>
+						            <a th:href="@{/subjectUpdate/{id}(id=${subject.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+						            <a th:href="@{/subjectDelete/{id}(id=${subject.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+						          </td>
+                                </tr>
                             </tbody>
                         </table>
                         <!-- </div> -->

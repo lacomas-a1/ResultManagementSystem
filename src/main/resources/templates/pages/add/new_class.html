@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/page_header}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Class</title>
+</head>
+<body>
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" layout:fragment="content">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Class Management</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">New Class</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+       <div class="card mb-3" id="form-body">
+                        <div class="card-header">
+                            Add Class
+                        </div>
+                        <div class="card-body">
+                            <form th:action="@{/saveClass}" th:object="${class1}" method="POST">
+                                <div class="form-group mt-2">
+                                    <label>Class Name</label>
+                                    <input type="text" class="form-control" th:field="*{cname}" placeholder="Class Name" required>
+                                </div>
+                         
+                                <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                        
+      </div>
+   </section>
+
+</body>
+</html>
