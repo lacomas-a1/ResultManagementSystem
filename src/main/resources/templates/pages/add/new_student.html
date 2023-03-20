@@ -30,6 +30,60 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+       <div class="card mb-3" id="form-body">
+                        <div class="card-header">
+                            Add Student
+                        </div>
+                        <div class="card-body">
+                             <form th:action="@{/saveStudent}" th:object="${student}" method="POST">
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Admission Number</label>
+                                            <input type="text" class="form-control" th:field="*{admno}" placeholder="Admission Number" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>First Name </label>
+                                            <input type="text" class="form-control" th:field="*{fname}" placeholder="First Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Last Name</label>
+                                            <input type="text" class="form-control" th:field="*{lname}" placeholder="Last Name" required>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label>Class Name</label>
+                                            <input type="text" class="form-control" th:field="*{cname}" placeholder="Class Name" required>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Gender </label>
+                                            <select th:field="*{gender}" class="form-control">
+                                                <option value="">--Select Gender--</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>                                                                                         
+                                            </select>
+                                        </div> 
+                                        <div class="form-group">
+                                            <label>Date Of Birth </label>
+                                            <input type="date" class="form-control" th:field="*{dob}" placeholder="Date Of Birth" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Parent Contact</label>
+                                            <input type="text" class="form-control" th:field="*{telno}" placeholder="Parent Contact" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Place Of Residence </label>
+                                            <input type="text" class="form-control" th:field="*{addr}" placeholder="Address" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+                            </form> 
+                        </div>
+                    </div>
+                        
       </div>
    </section>
 

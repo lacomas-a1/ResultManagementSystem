@@ -85,33 +85,8 @@
     <script>
     jQuery(document).ready(function($) {
         $('#tblUser').DataTable();
-        $("#form-body").hide();
-
-        $("#insert-btn").on('click',function(){
-            $("#form-body").toggle(500);
-        });
-
-        $("#submit").on('click',function(e){
-            e.preventDefault();
-
-            var class_name = $('#cname').val();
-            var subject_code = $('#scode').val();
-            var subject_name = $('#sname').val();
-
-            $.ajax({
-                url : "insertsubject.php",
-                type : "POST",
-                data : {cname:cname,scode:sode,sname:sname},
-                success : function(data){
-                    alert("Data Inserted Successfully");
-                    $("#form-body").hide();
-                    location.reload(true);
-                }
-            });
-
-        });
-
-    } );
+       
+	    } );
     </script>
       
       </div>

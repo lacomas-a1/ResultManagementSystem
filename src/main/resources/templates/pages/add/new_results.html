@@ -30,6 +30,36 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <div class="card mb-3" id="form-body">
+                            <div class="card-header">
+                                Individual Result
+                            </div>
+                            <div class="card-body">
+                                <form th:action="@{/saveResult}" th:object="${result}" method="POST">
+                                    <div class="form-group mt-2">
+                                        <label>Admission Number</label>
+                                        <input type="text" class="form-control" th:field="*{admno}" placeholder="Admission Number" required>
+                                    </div>
+                                    <div class="form-group">
+                                            <label>Class Name</label>
+                                            <input type="text" class="form-control" th:field="*{cname}" placeholder="Class Name" required>
+                                        </div>
+                                    <div class="form-group mt-2">
+                                            <label>Subject Name</label>
+                                            <input type="text" class="form-control" th:field="*{sname}" placeholder="Subject Name" required>
+                                    </div>
+                                    <div class="form-group mt-2">
+                                        <label>Exam Name</label>
+                                        <input type="text" class="form-control" th:field="*{ename}" placeholder="Exam Name" required>
+                                    </div>
+                                    <div class="form-group mt-2">
+                                        <label>Marks </label>
+                                        <input type="text" class="form-control" th:field="*{marks}" placeholder="Marks Out Of 100" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
       </div>
    </section>
 

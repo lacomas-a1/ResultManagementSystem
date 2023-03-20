@@ -40,59 +40,55 @@
                         <h4>Edit & Update data</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form th:action="@{/saveTeacher}" th:object="${teacher}" method="POST">
+
+                            <input type="hidden" th:field="*{id}" />
                             <div class="row mb-2">
                                 <div class="col-md-6">
-                                    <input type="hidden" name="id" value="" >
+                         
                                     <div class="mb-3">
                                         <label>ID Number</label>
-                                        <input type="text" name="idno" value="" class="form-control" required>
+                                        <input type="text" th:field="*{idno}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label>First Name</label>
-                                        <input type="text" name="fname" value="" class="form-control" required>
+                                        <input type="text" th:field="*{fname}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label>Last Name</label>
-                                        <input type="text" name="lname" value="" class="form-control" required>
+                                        <input type="text" th:field="*{lname}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label>Class Name</label>
-                                        <input type="text" name="class_name" value="" class="form-control" required>
+                                        <input type="text" th:field="*{cname}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label>Subject Name</label>
-                                        <input type="text" name="subject_name" value="" class="form-control" required>
+                                        <input type="text" th:field="*{sname}" class="form-control" required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label>Email</label>
-                                        <input type="email" name="email" value="" class="form-control" required>
-                                    </div>
+                                    
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label>Password</label>
-                                        <input type="text" name="pass" value="" class="form-control" required>
+                                   <div class="mb-3">
+                                        <label>Email</label>
+                                        <input type="email" th:field="*{email}" class="form-control" required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label>Confirm Password</label>
-                                        <input type="text" name="confirmpass" value="" class="form-control" required>
-                                    </div>
+                                    
                                     <div class="mb-3">
                                         <label>Gender</label>
-                                        <input type="text" name="gender" value="" class="form-control" required>
+                                        <input type="text" th:field="*{gender}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label>Date Of Birth</label>
-                                        <input type="date" name="dob" value="" class="form-control" required>
+                                        <input type="date" th:field="*{dob}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label>Contact</label>
-                                        <input type="text" name="telno" value="" class="form-control" required>
+                                        <input type="number" th:field="*{telno}" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Address</label>
-                                        <input type="address" name="address" value="" class="form-control" required>
+                                        <label>Place Of Residence</label>
+                                        <input type="text" th:field="*{addr}" class="form-control" required>
                                     </div>
                                 </div>
                             </div>

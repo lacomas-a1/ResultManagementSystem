@@ -33,7 +33,7 @@ public class ClassServiceImpl implements ClassService {
 		if (optional.isPresent()) {
 			class1 = optional.get();
 		} else {
-			throw new RuntimeException("Employee not found for id::" +id);
+			throw new RuntimeException("Class not found for id::" +id);
 
 		}
 		return class1;

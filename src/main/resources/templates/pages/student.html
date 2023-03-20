@@ -39,65 +39,10 @@
                             <h1></h1>
                         </div>
                         <div class="col-md-3">
-                            <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
+                           <a th:href="@{/showStudentForm}" class="btn btn-primary mb-3" style="float: right;"> Add Student</a>
                         </div>
                     </div>
-                    <div class="card mb-3" id="form-body">
-                        <div class="card-header">
-                            Add Student
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Admission Number</label>
-                                            <input type="text" class="form-control" id="adno" name="adno" placeholder="Admission Number" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>First Name </label>
-                                            <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
-                                        </div>
-                                        <div class="form-group"> 
-                                            <label>Class Name</label>
-                                            <input type="text" class="form-control" id="cname" name="cname" placeholder="Class Name" required>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Gender </label>
-                                            <select name="gender" id="gender" class="form-control" required="">
-                                                <option value="">--Select Gender--</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>                                                                                         
-                                            </select>
-                                        </div> 
-                                        <div class="form-group">
-                                            <label>Date Of Birth </label>
-                                            <input type="date" class="form-control" id="dob" name="dob" placeholder="Date Of Birth" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Parent Contact</label>
-                                            <input type="text" class="form-control" id="telno" name="telno" placeholder="Parent Contact" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address </label>
-                                            <input type="address" class="form-control" id="address" name="address" placeholder="Address" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
-                            </form> 
-                        </div>
-                    </div>
-                        
+                   
                        
                     </div>
 
@@ -116,24 +61,25 @@
                                     <th>Gender</th>
                                     <th>D.O.B</th>
                                     <th>P. Contact</th>
-                                    <th>Address</th>
+                                    <th>P. Of Residence</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-                                        <a href="#" data-id="" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
+                                <tr th:each="student : ${listStudents}">
+                                  <td th:text="${student.admno}"></td>
+                                  <td th:text="${student.fname}"></td>
+                                  <td th:text="${student.lname}"></td>
+                                  <td th:text="${student.cname}"></td>
+                                  <td th:text="${student.gender}"></td>
+                                  <td th:text="${student.dob}"></td>
+                                  <td th:text="${student.telno}"></td>
+                                  <td th:text="${student.addr}"></td>
+                                  <td>
+						            <a th:href="@{/studentUpdate/{id}(id=${student.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+						            <a th:href="@{/studentDelete/{id}(id=${student.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+						          </td>
+                                   
                                 </tr>
                             </tbody>
                         </table>
@@ -152,42 +98,10 @@
 
         $('#example').DataTable();
 
-        $("#form-body").hide();
-
-        $("#insert-btn").on('click',function(){
-            $("#form-body").toggle(500);
-        });
-
-        $("#submit").on('click',function(e){
-            e.preventDefault();
-
-            var adno = $('#adno').val();
-            var fname = $('#fname').val();
-            var lname = $('#lname').val();
-            var class_name = $('#class_name').val();
-            var gender = $('#gender').val();
-            var dob = $('#dob').val();
-            var telno = $('#telno').val();
-            var address = $('#address').val();
-
-            $.ajax({
-                url : "insertstudent.php",
-                type : "POST",
-                data : {adno:adno,fname:fname,lname:lname,class_name:class_name,gender:gender,dob:dob,telno:telno,address:address},
-                success : function(data){
-                    alert("Data Inserted Successfully");
-                    $("#form-body").hide();
-                    location.reload(true);
-                }
-            });
-
-        });
-
     } );
     </script>
       
       <div>
      </section>
 </body>
-<script th:src="@{/js/tablesdata.js}"></script>
 </html>
