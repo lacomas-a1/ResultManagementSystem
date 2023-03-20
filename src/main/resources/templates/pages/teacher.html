@@ -41,10 +41,7 @@
                         <div class="col-md-3">
                            <a th:href="@{/showTeacherForm}" class="btn btn-primary mb-3" style="float: right;"> Add Teacher</a>
                         </div>
-                    </div>
-                   
-                        
-                       
+                    </div>                       
                     </div>
 
 
@@ -82,9 +79,11 @@
                                     <td th:text="${teacher.addr}"></td>
                                     
                                     <td>
-						            <a th:href="@{/teacherUpdate/{id}(id=${teacher.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-						            <a th:href="@{/teacherDelete/{id}(id=${teacher.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-						          </td>
+					<a th:href="@{/teacherUpdate/{id}(id=${teacher.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+					<a th:href="@{/teacherDelete/{id}(id=${teacher.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+				    </td>
+						          
+						           
                                 </tr>
                             </tbody>
                         </table>
