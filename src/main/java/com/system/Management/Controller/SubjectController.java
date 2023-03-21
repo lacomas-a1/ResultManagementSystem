@@ -27,15 +27,28 @@ public class SubjectController {
 			return "/pages/subject";
 		}
 		
-		
-		@GetMapping("/showSubjectForm")
-		public String showSubjectForm(Model model) {
-			//create model attribute to bind form data
-			Subject subject = new Subject();
-			model.addAttribute("subject", subject);
-			return "/pages/add/new_subject";
-			
+		@GetMapping("/dashboard")
+		public String dashboard(Model model) {
+		    // get the count of subjects
+		    long count = subjectService.getSubjectCount();
+
+		    // add the count to the model
+		    model.addAttribute("count", count);
+
+		    // return the Thymeleaf template name
+		    return "/pages/dashboard";
 		}
+
+		
+		
+//		@GetMapping("/showSubjectForm")
+//		public String showSubjectForm(Model model) {
+//			//create model attribute to bind form data
+//			Subject subject = new Subject();
+//			model.addAttribute("subject", subject);
+//			return "/pages/add/new_subject";
+//			
+//		}
 		
 		@PostMapping("/saveSubject")
 			public String saveSubject(@ModelAttribute("subject") Subject subject) {

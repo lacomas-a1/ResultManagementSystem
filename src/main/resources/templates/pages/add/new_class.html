@@ -30,22 +30,21 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-       <div class="card mb-3" id="form-body">
-                        <div class="card-header">
-                            Add Class
-                        </div>
-                        <div class="card-body">
-                            <form th:action="@{/saveClass}" th:object="${class1}" method="POST">
-                                <div class="form-group mt-2">
-                                    <label>Class Name</label>
-                                    <input type="text" class="form-control" th:field="*{cname}" placeholder="Class Name" required>
-                                </div>
-                         
-                                <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                        
+        <div class="card mb-3" id="form-body">
+          <div class="card-header">
+            Add Class
+          </div>
+          <div class="card-body">
+              <form th:action="@{/saveClass}" th:object="${class1}" method="POST">
+                  <div class="form-group mt-2">
+                      <label>Class Name</label>
+                      <input type="text" class="form-control" th:field="*{cname}" placeholder="Class Name" required>
+                  </div>
+          
+                  <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+              </form>
+          </div>               
+        </div>               
       </div>
    </section>
 

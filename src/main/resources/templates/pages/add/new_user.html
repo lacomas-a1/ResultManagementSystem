@@ -30,6 +30,76 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        <div class="card mb-3" id="form-body">
+          <div class="card-header">
+              Add Student
+          </div>
+          <div class="card-body">
+              <form>
+                  <div class="row mb-2">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>ID Number</label>
+                              <input type="text" class="form-control" id="idno" name="idno" placeholder="Admission Number" required>
+                          </div>
+                          <div class="form-group">
+                              <label>First Name </label>
+                              <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+                          </div>
+                          <div class="form-group">
+                              <label>Last Name</label>
+                              <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+                          </div>
+                          <div class="form-group"> 
+                              <label>Class Name</label>
+                              <input type="text" class="form-control" id="cname" name="cname" placeholder="Class Name" required>
+                          </div>
+                           <div class="form-group"> 
+                              <label>Email</label>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Class Name" required>
+                          </div>
+                          <div class="form-group">
+                              <label>Role</label>
+                              <input type="text" class="form-control" id="role" name="role" placeholder="Parent Contact" required>
+                          </div>
+                          
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>Gender </label>
+                              <select name="gender" id="gender" class="form-control" required="">
+                                  <option value="">--Select Gender--</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>                                                                                         
+                              </select>
+                          </div> 
+                          <div class="form-group">
+                              <label>Date Of Birth </label>
+                              <input type="date" class="form-control" id="dob" name="dob" placeholder="Date Of Birth" required>
+                          </div>
+                          <div class="form-group">
+                              <label>Contact</label>
+                              <input type="text" class="form-control" id="telno" name="telno" placeholder="Parent Contact" required>
+                          </div>
+                          <div class="form-group">
+                              <label>Address </label>
+                              <input type="address" class="form-control" id="address" name="address" placeholder="Address" required>
+                          </div>
+                          <div class="form-group">
+                            <label>Password </label>
+                              <input type="password" class="form-control" id="pass" name="pass" onkeyup='check();' placeholder="Password" required>
+                          </div>
+                          <div class="form-group">                                         
+                            <label>Confirm Password </label>
+                            <input type="password" class="form-control" id="confirmpass" name="confirmpass" onkeyup='check();' placeholder="Password" required>
+                            <span id="message"></span>
+                          </div>
+                      </div>
+                  </div>
+                      <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+              </form> 
+          </div>
+      </div>
       </div>
    </section>
 

@@ -30,178 +30,61 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <!-- <div class="row justify-content-center"> -->
-            <!-- <div class="col-md-6"> -->
-                <!-- <div class="card shadow"> -->
-                    <div class="card-header">
-                    <div class="row mb-2">
-                        <div class="col-md-9">
-                            <h1></h1>
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card mb-3" id="form-body">
-                        <div class="card-header">
-                            Add Student
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>ID Number</label>
-                                            <input type="text" class="form-control" id="idno" name="idno" placeholder="Admission Number" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>First Name </label>
-                                            <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
-                                        </div>
-                                        <div class="form-group"> 
-                                            <label>Class Name</label>
-                                            <input type="text" class="form-control" id="cname" name="cname" placeholder="Class Name" required>
-                                        </div>
-                                         <div class="form-group"> 
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Class Name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Role</label>
-                                            <input type="text" class="form-control" id="role" name="role" placeholder="Parent Contact" required>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Gender </label>
-                                            <select name="gender" id="gender" class="form-control" required="">
-                                                <option value="">--Select Gender--</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>                                                                                         
-                                            </select>
-                                        </div> 
-                                        <div class="form-group">
-                                            <label>Date Of Birth </label>
-                                            <input type="date" class="form-control" id="dob" name="dob" placeholder="Date Of Birth" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Contact</label>
-                                            <input type="text" class="form-control" id="telno" name="telno" placeholder="Parent Contact" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address </label>
-                                            <input type="address" class="form-control" id="address" name="address" placeholder="Address" required>
-                                        </div>
-                                        <div class="form-group">
-										 <label>Password </label>
-										   <input type="password" class="form-control" id="pass" name="pass" onkeyup='check();' placeholder="Password" required>
-										</div>
-										<div class="form-group">                                         
-										 <label>Confirm Password </label>
-										<input type="password" class="form-control" id="confirmpass" name="confirmpass" onkeyup='check();' placeholder="Password" required>
-										<span id="message"></span>
-										</div>
-                                    </div>
-                                </div>
-                                    <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
-                            </form> 
-                        </div>
-                    </div>
-                        
-                       
-                    </div>
+        <div class="card-header">
+            <div class="row mb-2">
+                <div class="col-md-9">
+                    <h1></h1>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" id="insert-btn" class="btn btn-primary" style="float: right;">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
 
-                    <div class="card-body">
-                        <!-- <div class="table-striped"> -->
-                        <table id="example" class="table table-striped" style="width:100%">
-                        <!-- <table id="myTable2" class="display" style="width:100%"> -->
-                        <!-- <table id="tblUser" class="display"> -->
-                            <thead>
-                                <tr>
-                                    <th>ID. No</th>
-                                    <th>F. Name</th>
-                                    <th>L. Name</th>
-                                    <th>Email</th>
-                                    <th>Grade</th>
-                                    <th>Gender</th>
-                                    <th>D.O.B</th>
-                                    <th>P. Contact</th>
-                                    <th>Address</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-                                        <a href="#" data-id="" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- </div> -->
-
-                    </div>
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    </div>
-    <!-- <script src="alert.js"></script> -->
-    <script th:src="@{/js/swal/userdelete.js}"></script>
+        <div class="card-body">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID. No</th>
+                        <th>F. Name</th>
+                        <th>L. Name</th>
+                        <th>Email</th>
+                        <th>Grade</th>
+                        <th>Gender</th>
+                        <!-- <th>D.O.B</th> -->
+                        <th>P. Contact</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                            <a href="#" data-id="" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                    
+    <!-- </div> -->
+ 
     <script>
     jQuery(document).ready(function($) {
-        // $('#tblUser').DataTable();
-
-        $('#example').DataTable();
-
-        $("#form-body").hide();
-
-        $("#insert-btn").on('click',function(){
-            $("#form-body").toggle(500);
-        });
-
-        $("#submit").on('click',function(e){
-            e.preventDefault();
-
-            var adno = $('#adno').val();
-            var fname = $('#fname').val();
-            var lname = $('#lname').val();
-            var class_name = $('#class_name').val();
-            var gender = $('#gender').val();
-            var dob = $('#dob').val();
-            var telno = $('#telno').val();
-            var address = $('#address').val();
-
-            $.ajax({
-                url : "insertstudent.php",
-                type : "POST",
-                data : {adno:adno,fname:fname,lname:lname,class_name:class_name,gender:gender,dob:dob,telno:telno,address:address},
-                success : function(data){
-                    alert("Data Inserted Successfully");
-                    $("#form-body").hide();
-                    location.reload(true);
-                }
-            });
-
-        });
-
+        $('#example').DataTable(); 
     } );
     </script>
     <script>
@@ -220,5 +103,4 @@
       <div>
      </section>
 </body>
-<script th:src="@{/js/tablesdata.js}"></script>
 </html>

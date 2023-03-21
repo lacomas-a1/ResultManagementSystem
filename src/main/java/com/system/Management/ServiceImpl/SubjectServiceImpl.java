@@ -46,6 +46,14 @@ public class SubjectServiceImpl implements SubjectService {
 	@Override
 	public void deleteSubjectById(long id) {
 		this.subjectRepository.deleteById(id);
-	}    
+	}
+
+	@Override
+	public long getSubjectCount() {
+		// TODO Auto-generated method stub
+		return subjectRepository.count();
+	}
+
+	   
 
 }

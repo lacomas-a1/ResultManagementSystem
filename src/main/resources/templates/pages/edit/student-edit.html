@@ -31,69 +31,62 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <!-- <div class="container mt-5"> -->
-        
+        <div class="card shadow">
+            <div class="card-header">
+                <h4>Edit & Update data</h4>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/saveStudent}" th:object="${student}" method="POST">
 
-
-        <!-- <div class="row justify-content-center"> -->
-            <!-- <div class="col-md-6"> -->
-                <div class="card shadow">
-                    <div class="card-header">
-                        <h4>Edit & Update data</h4>
-                    </div>
-                    <div class="card-body">
-                        <form th:action="@{/saveStudent}" th:object="${student}" method="POST">
-
-                            <input type="hidden" th:field="*{id}" />
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Admission Number</label>
-                                            <input type="text" class="form-control" th:field="*{admno}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>First Name </label>
-                                            <input type="text" class="form-control" th:field="*{fname}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" class="form-control" th:field="*{lname}" required>
-                                        </div>
-                                        <div class="form-group"> 
-                                            <label>Class Name</label>
-                                            <input type="text" th:field="*{cname}" class="form-control" required>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Gender </label>
-                                            <input type="text" th:field="*{gender}" class="form-control" required> 
-                                        </div> 
-                                        <div class="form-group">
-                                            <label>Date Of Birth </label>
-                                            <input type="date" class="form-control" th:field="*{dob}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Parent Contact</label>
-                                            <input type="text" class="form-control" th:field="*{telno}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Place Of Residence </label>
-                                            <input type="text" class="form-control" th:field="*{addr}" required>
-                                        </div>
-                                    </div>
+                    <input type="hidden" th:field="*{id}" />
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Admission Number</label>
+                                    <input type="text" class="form-control" th:field="*{admno}" required>
                                 </div>
-                                    <div class="mb-3">
-                                        <hr/>
-                                        <button type="submit" name="update_buttton" class="btn btn-primary">Update Data</button>
-                                    </div>
-                            </form> 
-                    </div>
-                </div>
-            <!-- </div> -->
-        <!-- </div>
-    </div> -->
+                                <div class="form-group">
+                                    <label>First Name </label>
+                                    <input type="text" class="form-control" th:field="*{fname}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" th:field="*{lname}" required>
+                                </div>
+                                <div class="form-group"> 
+                                    <label>Class Name</label>
+                                    <input type="text" th:field="*{cname}" class="form-control" required>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Gender </label>
+                                    <input type="text" th:field="*{gender}" class="form-control" required> 
+                                </div> 
+                                <div class="form-group">
+                                    <label>Date Of Birth </label>
+                                    <input type="date" class="form-control" th:field="*{dob}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Parent Contact</label>
+                                    <input type="text" class="form-control" th:field="*{telno}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Place Of Residence </label>
+                                    <input type="text" class="form-control" th:field="*{addr}" required>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="mb-3">
+                                <hr/>
+                                <button type="submit" name="update_buttton" class="btn btn-primary">Update Data</button>
+                            </div>
+                    </form> 
+            </div>
+        </div>
+                
+
       </div>
    </section>
    

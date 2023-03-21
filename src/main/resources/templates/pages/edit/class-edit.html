@@ -31,38 +31,28 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-       <!-- <div class="container mt-5"> -->
+        <div class="card shadow">
+          <div class="card-header">
+              <h4>Update & Edit Class</h4>
+          </div>
+          <div class="card-body">
+              <form th:action="@{/saveClass}" th:object="${class1}" method="POST">
 
-        <!-- <div class="row justify-content-center"> -->
-            <!-- <div class="col-md-6"> -->
-                <div class="card shadow">
-                    <div class="card-header">
-                        <h4>Update & Edit Class</h4>
-                    </div>
-                    <div class="card-body">
-                        <form th:action="@{/saveClass}" th:object="${class1}" method="POST">
+                  <input type="hidden" th:field="*{id}" />
+                  <div class="mb-3">
+                      <label>Class Name</label>
+                      <input type="text" th:field="*{cname}" class="form-control" required>
+                  </div>
 
-                            <input type="hidden" th:field="*{id}" />
-                            <div class="mb-3">
-                                <label>Class Name</label>
-                                <input type="text" th:field="*{cname}" class="form-control" required>
-                            </div>
-                            <!-- <div class="mb-3">
-                                <label>Class Teacher</label>
-                                <input type="text" name="class_teacher" value="" class="form-control" required>
-                            </div> -->
+                  <div class="mb-3">
+                      <hr/>
+                      <button type="submit" name="update_buttton" class="btn btn-primary">Update Data</button>
+                  </div>
 
-                            <div class="mb-3">
-                                <hr/>
-                                <button type="submit" name="update_buttton" class="btn btn-primary">Update Data</button>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            <!-- </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
+              </form>
+          </div>
+      </div>
+                
       </div>
    </section>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

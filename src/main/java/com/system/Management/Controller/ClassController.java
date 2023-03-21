@@ -1,5 +1,6 @@
 package com.system.Management.Controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,15 @@ public class ClassController {
 		model.addAttribute("listClasses", classService.getAllClasses());
 		return "pages/class";
 	}
+	
+	//Display in Select Options
+//	 @GetMapping("/optionsSelect")
+//	    public String SelectOptions(Model model) {
+//	        List<Class> class1 = classService.getAllClasses();
+//	        model.addAttribute("listClasses", class1);
+//	        model.addAttribute("options", new Class());
+//	        return "/pages/add/new_subject";
+//	    }
 	
 	@GetMapping("/showClassForm")
 	public String showClassForm(Model model) {

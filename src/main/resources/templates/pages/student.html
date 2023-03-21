@@ -30,74 +30,58 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <!-- <div class="row justify-content-center"> -->
-            <!-- <div class="col-md-6"> -->
-                <!-- <div class="card shadow"> -->
-                    <div class="card-header">
-                    <div class="row mb-2">
-                        <div class="col-md-9">
-                            <h1></h1>
-                        </div>
-                        <div class="col-md-3">
-                           <a th:href="@{/showStudentForm}" class="btn btn-primary mb-3" style="float: right;"> Add Student</a>
-                        </div>
-                    </div>
-                   
+        <div class="card-header">
+          <div class="row mb-2">
+              <div class="col-md-9">
+                  <h1></h1>
+              </div>
+              <div class="col-md-3">
+                <a th:href="@{/showStudentForm}" class="btn btn-primary mb-3" style="float: right;"> Add Student</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Adm. No</th>
+                        <th>F. Name</th>
+                        <th>L. Name</th>
+                        <th>Grade</th>
+                        <th>Gender</th>
+                        <th>D.O.B</th>
+                        <th>P. Contact</th>
+                        <th>P. Of Residence</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="student : ${listStudents}">
+                      <td th:text="${student.admno}"></td>
+                      <td th:text="${student.fname}"></td>
+                      <td th:text="${student.lname}"></td>
+                      <td th:text="${student.cname}"></td>
+                      <td th:text="${student.gender}"></td>
+                      <td th:text="${student.dob}"></td>
+                      <td th:text="${student.telno}"></td>
+                      <td th:text="${student.addr}"></td>
+                      <td>
+                        <a th:href="@{/studentUpdate/{id}(id=${student.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                        <a th:href="@{/studentDelete/{id}(id=${student.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                      </td>
                        
-                    </div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-
-                    <div class="card-body">
-                        <!-- <div class="table-striped"> -->
-                        <table id="example" class="table table-striped" style="width:100%">
-                        <!-- <table id="myTable2" class="display" style="width:100%"> -->
-                        <!-- <table id="tblUser" class="display"> -->
-                            <thead>
-                                <tr>
-                                    <th>Adm. No</th>
-                                    <th>F. Name</th>
-                                    <th>L. Name</th>
-                                    <th>Grade</th>
-                                    <th>Gender</th>
-                                    <th>D.O.B</th>
-                                    <th>P. Contact</th>
-                                    <th>P. Of Residence</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr th:each="student : ${listStudents}">
-                                  <td th:text="${student.admno}"></td>
-                                  <td th:text="${student.fname}"></td>
-                                  <td th:text="${student.lname}"></td>
-                                  <td th:text="${student.cname}"></td>
-                                  <td th:text="${student.gender}"></td>
-                                  <td th:text="${student.dob}"></td>
-                                  <td th:text="${student.telno}"></td>
-                                  <td th:text="${student.addr}"></td>
-                                  <td>
-						            <a th:href="@{/studentUpdate/{id}(id=${student.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-						            <a th:href="@{/studentDelete/{id}(id=${student.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-						          </td>
-                                   
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- </div> -->
-
-                    </div>
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    </div>
-    <!-- <script src="alert.js"></script> -->
-    <script th:src="@{/js/swal/studentdelete.js}"></script>
+                    
+    <!-- </div> -->
+ 
     <script>
     jQuery(document).ready(function($) {
-        // $('#tblUser').DataTable();
-
         $('#example').DataTable();
-
     } );
     </script>
       

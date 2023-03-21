@@ -29,27 +29,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css"/>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
-<div class="wrapper">
 
-  <!-- Main Header Container -->
-   <span th:replace="fragments/header :: header"></span>
+    <div class="wrapper">
 
-    <!-- Sidebar -->
-    <span th:replace="fragments/sidebar :: sidebar"></span>
-  
+      <!-- Main Header Container -->
+      <span th:replace="fragments/header :: header"></span>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" layout:fragment="content">
-  <section class="content">
-      <div class="container-fluid">
+        <!-- Sidebar -->
+      <span th:replace="fragments/sidebar :: sidebar"></span>
+      
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" layout:fragment="content">
+        <section class="content">
+            <div class="container-fluid">
+            </div>
+        </section>
       </div>
-  </section>
- 
-  </div>
-  
-   <span th:replace="fragments/footer :: footer"></span>
+      
+      <span th:replace="fragments/footer :: footer"></span>
 
-</div>
+    </div>
 
 <!-- jQuery -->
 <script th:src="@{plugins/jquery/jquery.min.js}"></script>

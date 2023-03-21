@@ -30,80 +30,61 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <!-- <div class="row justify-content-center"> -->
-            <!-- <div class="col-md-6"> -->
-                <!-- <div class="card shadow"> -->
-                    <div class="card-header">
-                    <div class="row mb-2">
-                        <div class="col-md-9">
-                            <h1></h1>
-                        </div>
-                        <div class="col-md-3">
-                           <a th:href="@{/showTeacherForm}" class="btn btn-primary mb-3" style="float: right;"> Add Teacher</a>
-                        </div>
-                    </div>
-                   
+        <div class="card-header">
+          <div class="row mb-2">
+              <div class="col-md-9">
+                  <h1></h1>
+              </div>
+              <div class="col-md-3">
+                <a th:href="@{/showTeacherForm}" class="btn btn-primary mb-3" style="float: right;"> Add Teacher</a>
+              </div>
+          </div> 
+        </div>
+
+        <div class="card-body">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID. No</th>
+                        <th>F. Name</th>
+                        <th>L. Name</th>
+                        <th>Email</th>
+                        <th>Grade</th>
+                        <th>Subject</th>
+                        <th>Gender</th>
+                      <!--  <th>D.O.B</th>   -->
+                        <th>Contact</th>
+                        <th>Residence</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr th:each="teacher : ${listTeacher}">
+                        <td th:text="${teacher.idno}"></td>
+                        <td th:text="${teacher.fname}"></td>
+                        <td th:text="${teacher.lname}"></td>
+                        <td th:text="${teacher.email}"></td>
+                        <td th:text="${teacher.cname}"></td>
+                        <td th:text="${teacher.sname}"></td>
+                        <td th:text="${teacher.gender}"></td>
+                <!--        <td th:text="${teacher.dob}"></td> -->
+                        <td th:text="${teacher.telno}"></td>
+                        <td th:text="${teacher.addr}"></td>
                         
-                       
-                    </div>
+                        <td>
+                          <a th:href="@{/teacherUpdate/{id}(id=${teacher.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                          <a th:href="@{/teacherDelete/{id}(id=${teacher.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                    
+    <!-- </div> -->
 
-
-                    <div class="card-body">
-                        <!-- <div class="table-striped"> -->
-                        <table id="example" class="table table-striped" style="width:100%">
-                        <!-- <table id="myTable2" class="display" style="width:100%"> -->
-                        <!-- <table id="tblUser" class="display"> -->
-                            <thead>
-                                <tr>
-                                    <th>ID. No</th>
-                                    <th>F. Name</th>
-                                    <th>L. Name</th>
-                                    <th>Email</th>
-                                    <th>Grade</th>
-                                    <th>Subject</th>
-                                    <th>Gender</th>
-                                  <!--  <th>D.O.B</th>   -->
-                                    <th>Contact</th>
-                                    <th>Residence</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                 <tr th:each="teacher : ${listTeacher}">
-                                    <td th:text="${teacher.idno}"></td>
-                                    <td th:text="${teacher.fname}"></td>
-                                    <td th:text="${teacher.lname}"></td>
-                                    <td th:text="${teacher.email}"></td>
-                                    <td th:text="${teacher.cname}"></td>
-                                    <td th:text="${teacher.sname}"></td>
-                                    <td th:text="${teacher.gender}"></td>
-                            <!--        <td th:text="${teacher.dob}"></td> -->
-                                    <td th:text="${teacher.telno}"></td>
-                                    <td th:text="${teacher.addr}"></td>
-                                    
-                                    <td>
-						            <a th:href="@{/teacherUpdate/{id}(id=${teacher.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-						            <a th:href="@{/teacherDelete/{id}(id=${teacher.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-						          </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- </div> -->
-
-                    </div>
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    </div>
-    <!-- <script src="alert.js"></script> -->
-    <script th:src="@{/js/swal/studentdelete.js}"></script>
     <script>
     jQuery(document).ready(function($) {
-        // $('#tblUser').DataTable();
-
-        $('#example').DataTable();
-
-      
+        $('#example').DataTable();  
     } );
     </script>
       

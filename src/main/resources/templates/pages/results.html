@@ -30,68 +30,52 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- <div class="row justify-content-center"> -->
-            <!-- <div class="col-md-6"> -->
-                <!-- <div class="card shadow"> -->
-                <div class="card-header">
-                        <!-- <h1>Settings</h1> -->
-                        <div class="row mb-2">
-                            <div class="col-md-9">
-                                <!-- <h1></h1> -->
-                            </div>
-                             <div class="col-md-3">
-	                           <a th:href="@{/showResultForm}" class="btn btn-primary mb-3" style="float: right;"> Add Result</a>
-	                        </div>
-                        </div>
-                    </div>
+        <div class="card-header">
+          <!-- <h1></h1> -->
+          <div class="row mb-2">
+              <div class="col-md-9">
+                  <!-- <h1></h1> -->
+              </div>
+               <div class="col-md-3">
+               <a th:href="@{/showResultForm}" class="btn btn-primary mb-3" style="float: right;"> Add Result</a>
+            </div>
+          </div>
+        </div>
 
-
-                    <div class="card-body">
-                        <!-- <div class="table-striped"> -->
-                        <table id="tblUser" class="table table-striped" style="width:100%">
-                        <!-- <table id="myTable2" class="display" style="width:100%"> -->
-                        <!-- <table id="tblUser" class="display"> -->
-                            <thead>
-                                <tr>
-                                    <th>Adm. No</th>
-                                    <th>C. Name</th>
-                                    <th>S. Name</th>
-                                    <th>E. Name</th>
-                                    <th>Marks</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                               <tr th:each="result : ${listResults}">
-                                  <td th:text="${result.admno}"></td>
-                                  <td th:text="${result.cname}"></td>
-                                  <td th:text="${result.sname}"></td>
-                                  <td th:text="${result.ename}"></td>
-                                  <td th:text="${result.marks}"></td>
-                                  
-                                  <td>
-						            <a th:href="@{/resultUpdate/{id}(id=${result.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-						            <a th:href="@{/resultDelete/{id}(id=${result.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-						          </td>
-                                    
-                               </tr>
-                            </tbody>
-                        </table>
-                        <!-- </div> -->
-
-                    </div>
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    </div>
-    <!-- <script src="alert.js"></script> -->
-     <script th:src="@{/js/swal/resultdelete.js}"></script>
+      <div class="card-body">
+          <table id="tblUser" class="table table-striped" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>Adm. No</th>
+                      <th>C. Name</th>
+                      <th>S. Name</th>
+                      <th>E. Name</th>
+                      <th>Marks</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  
+                 <tr th:each="result : ${listResults}">
+                    <td th:text="${result.admno}"></td>
+                    <td th:text="${result.cname}"></td>
+                    <td th:text="${result.sname}"></td>
+                    <td th:text="${result.ename}"></td>
+                    <td th:text="${result.marks}"></td>
+                    
+                    <td>
+                      <a th:href="@{/resultUpdate/{id}(id=${result.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                      <a th:href="@{/resultDelete/{id}(id=${result.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                    </td>   
+                 </tr>
+              </tbody>
+          </table>
+      </div>
+                    
+    <!-- </div> -->
     <script>
     jQuery(document).ready(function($) {
         $('#tblUser').DataTable();
-        
-        
 	   } );
     </script>
        

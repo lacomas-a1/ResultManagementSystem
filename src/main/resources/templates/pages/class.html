@@ -34,16 +34,15 @@
             <!-- <div class="col-md-6"> -->
                 <!-- <div class="card shadow"> -->
                     <div class="card-header">
-                    <div class="row mb-2">
-                        <div class="col-md-9">
-                            <!-- <h1>Class Management</h1> -->
-                        </div>
-                        <div class="col-md-3">
-                           <a th:href="@{/showClassForm}" class="btn btn-primary mb-3" style="float: right;"> Add Class</a>
-                        </div>
+                      <div class="row mb-2">
+                          <div class="col-md-9">
+                              <!-- <h1>Class Management</h1> -->
+                          </div>
+                          <div class="col-md-3">
+                            <a th:href="@{/showClassForm}" class="btn btn-primary mb-3" style="float: right;"> Add Class</a>
+                          </div>
+                      </div> 
                     </div>
-                    
-                </div>
 
                     <div class="card-body">
                         <!-- <div class="table-striped"> -->
@@ -62,9 +61,9 @@
                                   <td th:text="${class1.cname}"></td>
                                     <!-- <td><?= $row['class_teacher'] ?></td>  -->
                                   <td>
-						            <a th:href="@{/classUpdate/{id}(id=${class1.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-						            <a th:href="@{/classDelete/{id}(id=${class1.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
-						          </td>
+                                    <a th:href="@{/classUpdate/{id}(id=${class1.id})}" class="btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                                    <a th:href="@{/classDelete/{id}(id=${class1.id})}" class="delete btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                                  </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -76,7 +75,7 @@
         <!-- </div> -->
     </div>
     <!-- <script src="alert.js"></script> -->
-    <script th:src="@{/js/swal/classdelete.js}"></script>
+    <!-- <script th:src="@{/js/swal/classdelete.js}"></script> -->
     <script>
     jQuery(document).ready(function($) {
         $('#example').DataTable();
