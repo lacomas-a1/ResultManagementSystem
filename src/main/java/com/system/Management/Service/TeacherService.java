@@ -9,5 +9,6 @@ public interface TeacherService {
     void saveTeacher(Teacher teacher);
     Teacher getTeacherById(long id);
     void deleteTeacherById(long id);
+    long getTeacherCount();
 
 }

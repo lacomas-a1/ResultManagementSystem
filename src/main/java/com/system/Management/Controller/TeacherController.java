@@ -26,14 +26,14 @@ public class TeacherController {
 	}
 	
 	
-	@GetMapping("/showTeacherForm")
-	public String showTeacherForm(Model model) {
-		//create model attribute to bind form data
-		Teacher teacher = new Teacher();
-		model.addAttribute("teacher", teacher);
-		return "/pages/add/new_teacher";
-		
-	}
+//	@GetMapping("/showTeacherForm")
+//	public String showTeacherForm(Model model) {
+//		//create model attribute to bind form data
+//		Teacher teacher = new Teacher();
+//		model.addAttribute("teacher", teacher);
+//		return "/pages/add/new_teacher";
+//		
+//	}
 	
 	@PostMapping("/saveTeacher")
 		public String saveTeacher(@ModelAttribute("teacher") Teacher teacher) {

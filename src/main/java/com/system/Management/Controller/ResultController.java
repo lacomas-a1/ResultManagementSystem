@@ -26,13 +26,13 @@ public class ResultController {
 			return "/pages/results";
 		}
 		
-		@GetMapping("/showResultForm")
-		public String showResultForm(Model model) {
-			//create model attribute to bind form data
-			Result result = new Result();
-			model.addAttribute("result", result);
-			return "/pages/add/new_results";
-		}
+//		@GetMapping("/showResultForm")
+//		public String showResultForm(Model model) {
+//			//create model attribute to bind form data
+//			Result result = new Result();
+//			model.addAttribute("result", result);
+//			return "/pages/add/new_results";
+//		}
 		
 		@PostMapping("/saveResult")
 		public String saveResult(@ModelAttribute("result") Result result) {

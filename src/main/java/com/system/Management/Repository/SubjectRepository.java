@@ -7,5 +7,5 @@ import com.system.Management.Model.Subject;
 
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject, Long>{
-
+//	long subjectCount();
 }

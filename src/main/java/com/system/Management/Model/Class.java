@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Class {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@Column(nullable = false,length = 40)
 	private String cname;
@@ -21,17 +21,16 @@ public class Class {
 		
 	}
 
-	public Class(long id, String cname) {
-		super();
+	public Class(Long id, String cname) {
 		this.id = id;
 		this.cname = cname;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -42,6 +41,5 @@ public class Class {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-
 	
 }

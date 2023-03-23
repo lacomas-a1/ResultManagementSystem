@@ -25,13 +25,13 @@ public class StudentController {
 				return "pages/student";
 			}
 			
-			@GetMapping("/showStudentForm")
-			public String showStudentForm(Model model) {
-				//create model attribute to bind form data
-				Student student = new Student();
-				model.addAttribute("student", student);
-				return "/pages/add/new_student";
-			}
+//			@GetMapping("/showStudentForm")
+//			public String showStudentForm(Model model) {
+//				//create model attribute to bind form data
+//				Student student = new Student();
+//				model.addAttribute("student", student);
+//				return "/pages/add/new_student";
+//			}
 			
 			@PostMapping("/saveStudent")
 			public String savaStudent(@ModelAttribute("student") Student student) {

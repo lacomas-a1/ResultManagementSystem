@@ -25,13 +25,13 @@ public class ExamController {
 			return "/pages/exams";
 		}
 		
-		@GetMapping("/showExamForm")
-		public String showExamForm(Model model) {
-			//create model attribute to bind form data
-			Exam exam = new Exam();
-			model.addAttribute("exam", exam);
-			return "/pages/add/new_exams";
-		}
+//		@GetMapping("/showExamForm")
+//		public String showExamForm(Model model) {
+//			//create model attribute to bind form data
+//			Exam exam = new Exam();
+//			model.addAttribute("exam", exam);
+//			return "/pages/add/new_exams";
+//		}
 		
 		@PostMapping("/saveExam")
 		public String savaExam(@ModelAttribute("exam") Exam exam) {

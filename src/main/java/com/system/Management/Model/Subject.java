@@ -13,7 +13,7 @@ public class Subject {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@Column(nullable = false,length = 40)
 	private String cname;
@@ -28,19 +28,18 @@ public class Subject {
 
 	}
 
-	public Subject(long id, String cname, String sname, String scode) {
-		super();
+	public Subject(Long id, String cname, String sname, String scode) {
 		this.id = id;
 		this.cname = cname;
 		this.sname = sname;
 		this.scode = scode;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -67,8 +66,6 @@ public class Subject {
 	public void setScode(String scode) {
 		this.scode = scode;
 	}
-	
-	
-	
+
 	
 }

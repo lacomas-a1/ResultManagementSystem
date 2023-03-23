@@ -44,4 +44,10 @@ public class ClassServiceImpl implements ClassService {
 		this.classRepository.deleteById(id);
 	}
 
+	@Override
+	public long getClassCount() {
+		// TODO Auto-generated method stub
+		return classRepository.count();
+	}
+
 }

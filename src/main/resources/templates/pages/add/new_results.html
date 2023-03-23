@@ -41,17 +41,32 @@
                       <input type="text" class="form-control" th:field="*{admno}" placeholder="Admission Number" required>
                   </div>
                   <div class="form-group">
-                          <label>Class Name</label>
-                          <input type="text" class="form-control" th:field="*{cname}" placeholder="Class Name" required>
-                      </div>
+			                  <label>Class Name</label>
+			                  <select th:field="*{cname}" class="form-select">
+						        <option value="">-- Select Class --</option>
+						        <option th:each="class1 : ${listClasses}"
+						                th:value="${class1.cname}"
+						                th:text="${class1.cname}"></option>
+						      </select>
+					      </div>
                   <div class="form-group mt-2">
-                          <label>Subject Name</label>
-                          <input type="text" class="form-control" th:field="*{sname}" placeholder="Subject Name" required>
-                  </div>
-                  <div class="form-group mt-2">
-                      <label>Exam Name</label>
-                      <input type="text" class="form-control" th:field="*{ename}" placeholder="Exam Name" required>
-                  </div>
+                  <label>Subject Name</label>
+                             <select th:field="*{sname}" class="form-select">
+						        <option value="">-- Select Subject --</option>
+						        <option th:each="subject : ${listSubject}"
+						                th:value="${subject.sname}"
+						                th:text="${subject.sname}"></option>
+						      </select>
+					      </div>
+				 <div class="form-group mt-2">
+                  <label>Exam Name</label>
+                             <select th:field="*{ename}" class="form-select">
+						        <option value="">-- Select Exam --</option>
+						        <option th:each="exam : ${listExams}"
+						                th:value="${exam.ename}"
+						                th:text="${exam.ename}"></option>
+						      </select>
+					      </div>
                   <div class="form-group mt-2">
                       <label>Marks </label>
                       <input type="text" class="form-control" th:field="*{marks}" placeholder="Marks Out Of 100" required>

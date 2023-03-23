@@ -45,4 +45,10 @@ public class StudentServiceImpl implements StudentService {
 		this.studentRepository.deleteById(id);
 	}
 
+	@Override
+	public long getStudentCount() {
+		// TODO Auto-generated method stub
+		return studentRepository.count();
+	}
+
 }

@@ -27,17 +27,17 @@ public class SubjectController {
 			return "/pages/subject";
 		}
 		
-		@GetMapping("/dashboard")
-		public String dashboard(Model model) {
-		    // get the count of subjects
-		    long count = subjectService.getSubjectCount();
-
-		    // add the count to the model
-		    model.addAttribute("count", count);
-
-		    // return the Thymeleaf template name
-		    return "/pages/dashboard";
-		}
+//		@GetMapping("/dashboard")
+//		public String dashboard(Model model) {
+//		    // get the count of subjects
+//		    long count = subjectService.getSubjectCount();
+//
+//		    // add the count to the model
+//		    model.addAttribute("count", count);
+//
+//		    // return the Thymeleaf template name
+//		    return "/pages/dashboard";
+//		}
 
 		
 		

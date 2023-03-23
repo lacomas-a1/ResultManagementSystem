@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Result {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@Column(nullable = false,length = 40)
 	private int marks;
@@ -33,8 +33,7 @@ public class Result {
 
 	}
 
-	public Result(long id, int marks, String cname, String sname, String ename, String admno) {
-		super();
+	public Result(Long id, int marks, String cname, String sname, String ename, String admno) {
 		this.id = id;
 		this.marks = marks;
 		this.cname = cname;
@@ -43,11 +42,11 @@ public class Result {
 		this.admno = admno;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -89,12 +88,6 @@ public class Result {
 
 	public void setAdmno(String admno) {
 		this.admno = admno;
-	}
-	
-	
-	
-	
-	
-	
+	}	
 
 }
