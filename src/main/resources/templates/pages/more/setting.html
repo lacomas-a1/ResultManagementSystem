@@ -30,22 +30,26 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+    <!--    <th:block th:if="${session.msg}">
+			<p class="text-center fs-4 text-success">[[${session.msg}]]</p>
+			<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+		</th:block>--> 
         <div class="card mb-3">
           <div class="card-header">
               More Settings
           </div>
 
-          <div class="card-body">
-              <form action="" method="POST" enctype="multipart/form-data">
-              <div class="row mb-2">
+         <div class="card-body">
+              <form action="Upload" method="POST" enctype="multipart/form-data">
+               <div class="row mb-2">
                   <div class="col-md-8">
                       <div class="mb-3">
                       <label>Institution Name</label>
-                          <input type="text" name="institute" class="form-control" placeholder="Institution Name" required>
+                          <input type="text" name="iname" class="form-control" placeholder="Institution Name" required>
                       </div>
                       <div class="mb-3">
                           <label>School Email</label>
-                          <input type="email" name="email" class="form-control" placeholder="School Email" required>
+                          <input type="email" name="semail" class="form-control" placeholder="School Email" required>
                       </div>
                       <div class="mb-3">
                           <label>Location</label>
@@ -54,21 +58,21 @@
                       <div class="mb-3">
                           <label>Address</label>
                           <input type="address" name="address" class="form-control" placeholder="Address" required>
-                      </div>
+                      </div> 
                   </div>
                   <div class="col-md-4">
-                      <img id="thumbnil" style="width: 70%; float:right; margin-top: 10px; height: 300px;" src="" alt="image" />
+                      <img id="thumbnil" style="width: 85%; float:right; margin-top: 10px; height: 350px;" src="" alt="image" />
                   </div>
               </div>
                   <div class="mb-3">
                       <label>Upload Image</label>
-                      <input type="file" accept="image/*" onchange="showMyImage(this)" name="image_profile" required class="form-control">
-                  </div>
+                      <input type="file" accept="image/*" onchange="showMyImage(this)" name="img" required class="form-control">
+                  </div>   
                   <div class="mb-3">
                       <hr/>
                       <button type="submit" name="upload_save_btn" class="btn btn-primary">Upload</button>
-                  </div>                                                                           
-              </form>
+                  </div>                                                                      
+              </form> 
           </div>
         </div>
       

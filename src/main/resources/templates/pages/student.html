@@ -46,8 +46,8 @@
                 <thead>
                     <tr>
                         <th>Adm. No</th>
-                        <th>F. Name</th>
-                        <th>L. Name</th>
+                        <th>Name</th>
+                      <!--    <th>L. Name</th>-->
                         <th>Grade</th>
                         <th>Gender</th>
                         <th>D.O.B</th>
@@ -59,8 +59,8 @@
                 <tbody>
                     <tr th:each="student : ${listStudents}">
                       <td th:text="${student.admno}"></td>
-                      <td th:text="${student.fname}"></td>
-                      <td th:text="${student.lname}"></td>
+                      <td th:text="${student.fname + ' ' + student.lname}"></td>
+                     <!--   <td th:text="${student.lname}"></td>-->
                       <td th:text="${student.cname}"></td>
                       <td th:text="${student.gender}"></td>
                       <td th:text="${student.dob}"></td>

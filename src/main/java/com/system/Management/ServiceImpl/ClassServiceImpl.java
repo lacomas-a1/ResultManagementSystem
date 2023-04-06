@@ -45,9 +45,11 @@ public class ClassServiceImpl implements ClassService {
 	}
 
 	@Override
-	public long getClassCount() {
+	public Long countClass() {
 		// TODO Auto-generated method stub
 		return classRepository.count();
 	}
+
+
 
 }

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/page_header}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Results</title>
+</head>
+<body>
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" layout:fragment="content">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Result Management</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">New-Lower-Primary-Results</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="card mb-3" id="form-body">
+            <div class="card-header">
+                Add Lower Primary Individual Results
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row mb-1">
+                      <div class="col-sm-4"> 
+                      
+                          <div class="form-group mt-2">
+                                <label>Admission Number......</label>
+                                <input type="text" required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Class Name........................</label>
+                                <input type="number"  required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Exam Name............................</label>
+                                <input type="number" required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Religious Education</label>
+                                <input type="number" required />
+                            </div>
+
+                         <!--  <div class="form-group mt-2">
+                                <label>Admission Number</label>
+                                <input type="text" class="form-control" placeholder="Admission Number" required>
+                            </div>
+                           <div class="form-group">
+                              <label>Class Name</label>
+                              <select th:field="*{cname}" class="form-select">
+                                <option value="">-- Select Class --</option>
+                                <option th:each="class1 : ${listClasses}"
+                                        th:value="${class1.cname}"
+                                        th:text="${class1.cname}"></option>
+                              </select>
+                            </div>
+                            <div class="form-group mt-2">
+                              <label>Exam Name</label>
+                              <select th:field="*{ename}" class="form-select">
+                                <option value="">-- Select Exam --</option>
+                                <option th:each="exam : ${listExams}"
+                                        th:value="${exam.ename}"
+                                        th:text="${exam.ename}"></option>
+                              </select> 
+                            </div> 
+                             -->
+                        </div> 
+                       <div class="col-md-4"> 
+                            <div class="form-group mt-2">
+                                <label>English Language Activities</label>
+                                <input type="number" required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Kiswahili Language Activities</label>
+                                <input type="number"  required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Mathematics Activities</label>
+                                <input type="number" required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Environment Activities</label>
+                                <input type="number" required />
+                            </div>
+                        </div> 
+                       
+                          <div class="col-md-4">
+                            <div class="form-group mt-2">
+                                <label>Art & Craft Activities</label>
+                                <input type="number" required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Music Activities....................</label>
+                                <input type="number" required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Hygiene & Nutrition Activities</label>
+                                <input type="number"  required />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label>Movement Activities</label>
+                                <input type="number"  required />
+                            </div> 
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary mt-2" id="submit">Submit</button>
+                </form> 
+            </div>
+        </div>                       
+    </div>
+   </section>
+
+</body>
+</html>

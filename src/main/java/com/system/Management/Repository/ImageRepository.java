@@ -3,9 +3,9 @@ package com.system.Management.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.system.Management.Model.Subject;
+import com.system.Management.Model.Image;
 
 @Repository
-public interface SubjectRepository extends JpaRepository<Subject, Long>{
-	long count();
+public interface ImageRepository extends JpaRepository<Image, Long>{
+
 }

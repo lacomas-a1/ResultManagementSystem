@@ -50,9 +50,11 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public long getTeacherCount() {
+	public Long countTeachers() {
 		// TODO Auto-generated method stub
 		return teacherRepository.count();
 	}
+
+	
 
 }

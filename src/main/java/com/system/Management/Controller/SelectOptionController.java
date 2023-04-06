@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.system.Management.Model.Class;
 import com.system.Management.Model.Exam;
@@ -76,14 +77,16 @@ public class SelectOptionController {
 	    
 	    @GetMapping("/showResultForm")
 		public String showResultForm(Model model) {
-	    	List<Class> classes = classRepository.findAll();
-			model.addAttribute("listClasses", classes);
-			List<Subject> subjects = subjectRepository.findAll();
-			model.addAttribute("listSubject", subjects);
-			List<Exam> exams = examRepository.findAll();
-			model.addAttribute("listExams", exams);
-			model.addAttribute("result", new Result());
-			return "/pages/add/new_results";
+//	    	List<Class> classes = classRepository.findAll();
+//			model.addAttribute("listClasses", classes);
+//			List<Subject> subjects = subjectRepository.findAll();
+//			model.addAttribute("listSubject", subjects);
+//			List<Exam> exams = examRepository.findAll();
+//			model.addAttribute("listExams", exams);
+//			model.addAttribute("result", new Result());
+			return "/pages/add/lower_primary";
 		}
+	    
+	   
 
 }

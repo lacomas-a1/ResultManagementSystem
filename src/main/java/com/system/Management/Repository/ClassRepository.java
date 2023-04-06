@@ -7,6 +7,7 @@ import com.system.Management.Model.Class;
 
 @Repository
 public interface ClassRepository extends JpaRepository<Class, Long>{
-//	long classCount();
+//	long classCount()
+	long count();
 
 }

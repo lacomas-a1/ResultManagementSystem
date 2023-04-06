@@ -46,7 +46,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public long getStudentCount() {
+	public Long countStudents() {
 		// TODO Auto-generated method stub
 		return studentRepository.count();
 	}

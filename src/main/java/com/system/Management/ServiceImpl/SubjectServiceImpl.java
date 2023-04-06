@@ -49,10 +49,12 @@ public class SubjectServiceImpl implements SubjectService {
 	}
 
 	@Override
-	public long getSubjectCount() {
+	public Long countSubjects() {
 		// TODO Auto-generated method stub
 		return subjectRepository.count();
 	}
+
+	
 
 	   
 

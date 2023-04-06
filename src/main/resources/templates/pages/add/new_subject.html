@@ -36,16 +36,15 @@
           </div>
           <div class="card-body">
               <form th:action="@{/saveSubject}" th:object="${subject}" method="POST">
-                 <div class="form-group">
-	                  <label>Class Name</label>
-	                  <select th:field="*{cname}" class="form-select">
-				        <option value="">-- Select Class --</option>
-				        <option th:each="class1 : ${listClasses}"
-				                th:value="${class1.cname}"
-				                th:text="${class1.cname}"></option>
-				      </select>
-			      </div>
-                  
+                  <div class="form-group">
+                    <label>Class Name</label>
+                    <select th:field="*{cname}" class="form-select">
+                      <option value="">-- Select Class --</option>
+                      <option th:each="class1 : ${listClasses}"
+                              th:value="${class1.cname}"
+                              th:text="${class1.cname}"></option>
+                    </select>
+                  </div> 
                   <div class="form-group mt-2">
                       <label>Subject Name </label>
                       <input type="text" class="form-control" th:field="*{sname}" placeholder="Subject Name" required>

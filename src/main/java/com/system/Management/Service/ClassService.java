@@ -16,6 +16,6 @@ public interface ClassService {
     void saveClass(Class class1);
     Class getClassById(long id);
     void deleteClassById(long id);
-    long getClassCount();
+    Long countClass();
 
 }

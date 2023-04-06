@@ -15,79 +15,56 @@ public class Result {
 	private Long id;
 	
 	@Column(nullable = false,length = 40)
-	private int marks;
-	
-	@Column(nullable = false,length = 40)
 	private String cname;
 	
-	@Column(nullable = false,length = 40)
-	private String sname;
-
 	@Column(nullable = false,length = 40)
 	private String ename;
 	
 	@Column(nullable = false,length = 40)
 	private String admno;
+	
+	//All the subjects
+	
+	@Column(nullable = false,length = 40)
+	private int maths;
+	
+	@Column(nullable = false,length = 40)
+	private int eng;
+	
+	@Column(nullable = false,length = 40)
+	private int kisw;
+	
+	@Column(nullable = false,length = 40)
+	private int soc;
+	
+	@Column(nullable = false,length = 40)
+	private int sci;
+	
+	@Column(nullable = false,length = 40)
+	private double mathsPercent;
+	
+	@Column(nullable = false,length = 40)
+	private double engPercent;
+	
+	@Column(nullable = false,length = 40)
+	private double kiswPercent;
+	
+	@Column(nullable = false,length = 40)
+	private double socPercent;
+	
+	@Column(nullable = false,length = 40)
+	private double sciPercent;
+	
+	@Column(nullable = false,length = 40)
+	private int total;
+	
+	@Column(nullable = false,length = 40)
+	private double average;
 
 	public Result() {
 
 	}
 
-	public Result(Long id, int marks, String cname, String sname, String ename, String admno) {
-		this.id = id;
-		this.marks = marks;
-		this.cname = cname;
-		this.sname = sname;
-		this.ename = ename;
-		this.admno = admno;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public int getMarks() {
-		return marks;
-	}
-
-	public void setMarks(int marks) {
-		this.marks = marks;
-	}
-
-	public String getCname() {
-		return cname;
-	}
-
-	public void setCname(String cname) {
-		this.cname = cname;
-	}
-
-	public String getSname() {
-		return sname;
-	}
-
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
-
-	public String getEname() {
-		return ename;
-	}
-
-	public void setEname(String ename) {
-		this.ename = ename;
-	}
-
-	public String getAdmno() {
-		return admno;
-	}
-
-	public void setAdmno(String admno) {
-		this.admno = admno;
-	}	
+	
 
 }

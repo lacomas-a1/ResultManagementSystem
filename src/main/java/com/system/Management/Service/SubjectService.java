@@ -9,5 +9,5 @@ public interface SubjectService {
     void saveSubject(Subject subject);
     Subject getSubjectById(long id);
     void deleteSubjectById(long id);
-    long getSubjectCount();
+    Long countSubjects();
 }

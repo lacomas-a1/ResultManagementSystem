@@ -46,8 +46,8 @@
                 <thead>
                     <tr>
                         <th>ID. No</th>
-                        <th>F. Name</th>
-                        <th>L. Name</th>
+                        <th>Name</th>
+                      <!--  <th>L. Name</th>-->
                         <th>Email</th>
                         <th>Grade</th>
                         <th>Subject</th>
@@ -61,8 +61,8 @@
                 <tbody>
                      <tr th:each="teacher : ${listTeacher}">
                         <td th:text="${teacher.idno}"></td>
-                        <td th:text="${teacher.fname}"></td>
-                        <td th:text="${teacher.lname}"></td>
+                        <td th:text="${teacher.fname + ' ' + teacher.lname}"></td>
+                     <!--    <td th:text="${teacher.lname}"></td>  -->
                         <td th:text="${teacher.email}"></td>
                         <td th:text="${teacher.cname}"></td>
                         <td th:text="${teacher.sname}"></td>

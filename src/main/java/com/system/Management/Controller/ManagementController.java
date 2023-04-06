@@ -10,10 +10,16 @@ public class ManagementController {
 			return "index";
 		}
 		
-		@RequestMapping("/home")
-		public String homePage() {
-			return "pages/dashboard";
-		}
+//		@RequestMapping("/home")
+//		public String homePage() {
+//			return "pages/dashboard";
+//		}
+		
+//	    @RequestMapping("/form")
+//	    public String LowerPrimary() {
+//			return "pages/add/lower_primary";
+//		}
+			
 		
 		                            
 	
